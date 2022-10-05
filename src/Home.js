@@ -24,7 +24,7 @@ function Home() {
             title="Kenwood kMix Stand Mixer for Baking, Stylish Kitchen Mixer with K-beater, dough Hook nad Whisk, 5 Litre Glass Bowl"
             price={239.0}
             rating={4}
-            image="https://m.media-amazon.com/images/I/51ddU7z-xXL._SL1000_.jpg"
+            image="https://m.media-amazon.com/images/I/61FJtVQh9bL._AC_SL1200_.jpg"
           />
         </div>
         <div className="home__row">

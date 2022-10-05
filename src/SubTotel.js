@@ -1,25 +1,28 @@
-import { SportsBasketball } from "@mui/icons-material";
 import React from "react";
-import CurrencyFormat from "react-currency-format";
 import "./SubTotel.css";
+import CurrencyFormat from "react-currency-format";
+import { useStateValue } from "./StateProvider";
+import { getBasketTotal } from "./reducer";
 
-function SubTotel() {
+function Subtotal() {
+  const [{ basket }, dispatch] = useStateValue();
+
   return (
-    <div className="subtotel">
+    <div className="subtotal">
       <CurrencyFormat
         renderText={(value) => (
           <>
             <p>
-              Subtotel (0 items): <strong>0</strong>
+              {/* Part of the homework */}
+              Subtotal ({basket.length} items): <strong>{value}</strong>
             </p>
-            <small className="subtotel__gift">
-              <input type="checkbox" />
-              This order contains a gift
+            <small className="subtotal__gift">
+              <input type="checkbox" /> This order contains a gift
             </small>
           </>
         )}
         decimalScale={2}
-        value={0}
+        value={getBasketTotal(basket)} // Part of the homework
         displayType={"text"}
         thousandSeparator={true}
         prefix={"$"}
@@ -30,4 +33,4 @@ function SubTotel() {
   );
 }
 
-export default SubTotel;
+export default Subtotal;
